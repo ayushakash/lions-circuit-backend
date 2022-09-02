@@ -1,5 +1,6 @@
 const express = require ('express');
 const customerData = require('./database.js')
+const { v4: uuid } = require('uuid');
 
 
 const bodyParser = require("body-parser");
@@ -11,11 +12,16 @@ app.use(cors());
 
 
 
-app.post('/store',async(req,res)=>{
 
-    const lions_data= new customerData(req.body);
-    console.log(lions_data);
+app.post('/store',async(req,res)=>{
+    console.log("Request body: ", req.body)
+
+    let data = req.body
+    data["_id"] = uuid()
+
+    const lions_data = new customerData(req.body);
     
+
     try {
         
         await lions_data.save();       

@@ -13,15 +13,18 @@ mongoose
     .then(() => console.log('mongo connected sucessfuly'))
     .catch((err) => console.log(err))
 
-const CheckoutSchema = new mongoose.Schema({                                    //mongoose schema
+const CheckoutSchema = new mongoose.Schema({    
+    _id: String,                                //mongoose schema
     name: {
         type: String,
         required: true
     },
     
-    address: {
-        type : Array , "default" : [] 
-    },
+    address: [{
+        _id: String,
+        id: Number,
+        address: String
+    }],
     mobile: {
         type: String,
         required: true
