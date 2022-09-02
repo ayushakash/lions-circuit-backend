@@ -13,7 +13,7 @@ mongoose
     .then(() => console.log('mongo connected sucessfuly'))
     .catch((err) => console.log(err))
 
-const CheckoutSchema = new mongoose.Schema({
+const CheckoutSchema = new mongoose.Schema({                                    //mongoose schema
     name: {
         type: String,
         required: true

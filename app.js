@@ -18,7 +18,7 @@ app.post('/store',async(req,res)=>{
     
     try {
         
-        await lions_data.save();
+        await lions_data.save();       
         console.log('user saved sucessfully');
         
     } catch (error) {
