@@ -29,6 +29,6 @@ const CheckoutSchema = new mongoose.Schema({
 
 });
 
-const customerData = mongoose.model("lions_data", CheckoutSchema); ////////collection name will be users
+const customerData = mongoose.model("lions_data", CheckoutSchema);
 
 module.exports = customerData;

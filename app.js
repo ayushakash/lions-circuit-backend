@@ -1,18 +1,17 @@
 const express = require ('express');
 const customerData = require('./database.js')
 
-// require('dotenv').config()
+
 const bodyParser = require("body-parser");
 const app=express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 var cors = require('cors');
 app.use(cors());
-// const sendEmail = require('./email.js')
+
 
 
 app.post('/store',async(req,res)=>{
-
 
     const lions_data= new customerData(req.body);
     console.log(lions_data);
